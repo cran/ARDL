@@ -1,12 +1,15 @@
 Package: ARDL
 Type: Package
 Title: ARDL, ECM and Bounds-Test for Cointegration
-Description: Creates complex autoregressive distributed lag (ARDL) models
-    providing just the order and automatically constructs the underlying
-    unrestricted and restricted error correction model (ECM). It also performs
-    the bounds-test for cointegration as described in Pesaran et al. (2001) <doi:10.1002/jae.616> and provides the multipliers and the cointegrating
-    equation.
-Version: 0.1.1
+Description: Creates complex autoregressive distributed lag (ARDL) models and 
+    constructs the underlying unrestricted and restricted error correction 
+    model (ECM) automatically, just by providing the order. It also performs
+    the bounds-test for cointegration as described in Pesaran et al. (2001) 
+    <doi:10.1002/jae.616> and provides the multipliers and the cointegrating
+    equation. The validity and the accuracy of this package have been verified 
+    by successfully replicating the results of Pesaran et al. (2001) in 
+    Natsiopoulos and Tzeremes (2022) <doi:10.1002/jae.2919>.
+Version: 0.2.0
 Authors@R: c(
   person("Kleanthis", "Natsiopoulos", 
   email = "klnatsio@gmail.com", role = c("aut", "cre"), 
@@ -21,12 +24,12 @@ LazyData: true
 Depends: R (>= 3.2.0)
 Suggests: qpcR, sandwich, xts
 Imports: aod, dplyr, dynlm, lmtest, msm, stringr, zoo
-RoxygenNote: 7.1.0
+RoxygenNote: 7.2.0
 NeedsCompilation: no
-Packaged: 2021-01-08 03:08:22 UTC; akis
+Packaged: 2022-06-28 17:25:25 UTC; axter
 Author: Kleanthis Natsiopoulos [aut, cre]
     (<https://orcid.org/0000-0003-1180-2984>),
   Nickolaos Tzeremes [aut] (<https://orcid.org/0000-0002-6938-3404>)
 Maintainer: Kleanthis Natsiopoulos <klnatsio@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-01-10 15:20:26 UTC
+Date/Publication: 2022-06-29 06:50:09 UTC
