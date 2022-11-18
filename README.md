@@ -4,6 +4,13 @@
 # ARDL <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
+
+[![downloads](https://cranlogs.r-pkg.org/badges/grand-total/ARDL)](https://CRAN.R-project.org/package=ARDL)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ARDL)](https://CRAN.R-project.org/package=ARDL)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![codecov](https://codecov.io/gh/Natsiopoulos/ARDL/branch/master/graph/badge.svg?token=PVZAY57F3D)](https://app.codecov.io/gh/Natsiopoulos/ARDL)
 <!-- badges: end -->
 
 ## Overview
@@ -15,8 +22,9 @@ the bounds-test for cointegration as described in [Pesaran et
 al. (2001)](https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.616) and
 provides the multipliers and the cointegrating equation. The validity
 and the accuracy of this package have been verified by successfully
-replicating the results of Pesaran et al. (2001) in Natsiopoulos and
-Tzeremes (2022) <doi:10.1002/jae.2919>.
+replicating the results of Pesaran et al. (2001) in [Natsiopoulos and
+Tzeremes
+(2022)](https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.2919).
 
 ## Why `ARDL`?
 
@@ -62,10 +70,6 @@ First, we find the best ARDL specification. We search up to order 5.
 
 ``` r
 models <- auto_ardl(LRM ~ LRY + IBO + IDE, data = denmark, max_order = 5)
-#> Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.
-#> Using compatibility `.name_repair`.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 
 # The top 20 models according to the AIC
 models$top_orders
@@ -173,8 +177,8 @@ summary(uecm_3132)
 ```
 
 And also the RECM (Restricted Error Correction Model) of the underlying
-ARDL(3,1,3,2), allowing the constant to join the short-run relationship
-(case 2), instead of the long-run (case 3).
+ARDL(3,1,3,2), allowing the constant to join the long-run relationship
+(case 2), instead of the short-run (case 3).
 
 ``` r
 recm_3132 <- recm(uecm_3132, case = 2)
@@ -235,7 +239,7 @@ tbounds
 #>  Bounds t-test for no cointegration
 #> 
 #> data:  d(LRM) ~ L(LRM, 1) + L(LRY, 1) + L(IBO, 1) + L(IDE, 1) + d(L(LRM,     1)) + d(L(LRM, 2)) + d(LRY) + d(IBO) + d(L(IBO, 1)) + d(L(IBO,     2)) + d(IDE) + d(L(IDE, 1))
-#> t = -4.5479, Lower-bound I(0) = -3.43, Upper-bound I(1) = -4.37,
+#> t = -4.5479, Lower-bound I(0) = -3.4430, Upper-bound I(1) = -4.3799,
 #> p-value = 0.005538
 #> alternative hypothesis: Possible cointegration
 #> null values:
@@ -245,7 +249,7 @@ tbounds
 # Here is a more clear view of the main results.
 tbounds$tab
 #>   statistic lower.bound upper.bound alpha     p.value
-#> t -4.547939       -3.43       -4.37  0.01 0.005538316
+#> t -4.547939   -3.442978   -4.379886  0.01 0.005538316
 ```
 
 Here we have the short-run and the long-run multipliers (with standard
@@ -343,10 +347,10 @@ identical(uecm_model$coefficients, dynlm_uecm_model$coefficients)
 
 ## References
 
-Kleanthis Natsiopoulos and Nickolaos G. Tzeremes (2022). ARDL bounds
+Natsiopoulos, Kleanthis, & Tzeremes, Nickolaos G. (2022). ARDL bounds
 test for cointegration: Replicating the Pesaran et al. (2001) results
-for the UK earnings equation using R. *Journal of Applied Econometrics*.
-<https://doi.org/10.1002/jae.2919>
+for the UK earnings equation using R. *Journal of Applied Econometrics*,
+37(5), 1079-1090. <https://doi.org/10.1002/jae.2919>
 
 Pesaran, M. H., Shin, Y., & Smith, R. J. (2001). Bounds testing
 approaches to the analysis of level relationships. *Journal of Applied
