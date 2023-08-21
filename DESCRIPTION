@@ -9,7 +9,7 @@ Description: Creates complex autoregressive distributed lag (ARDL) models and
     equation. The validity and the accuracy of this package have been verified 
     by successfully replicating the results of Pesaran et al. (2001) in 
     Natsiopoulos and Tzeremes (2022) <doi:10.1002/jae.2919>.
-Version: 0.2.3
+Version: 0.2.4
 Authors@R: c(
   person("Kleanthis", "Natsiopoulos", 
   email = "klnatsio@gmail.com", role = c("aut", "cre"), 
@@ -23,16 +23,16 @@ URL: https://github.com/Natsiopoulos/ARDL
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.5.0)
-Suggests: qpcR, sandwich, testthat (>= 3.0.0)
+Suggests: strucchange, tseries, qpcR, sandwich, testthat (>= 3.0.0)
 Imports: aod, dplyr, dynlm, gridExtra, ggplot2, lmtest, msm, stringr,
         zoo
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2023-05-16 11:43:21 UTC; axter
+Packaged: 2023-08-20 09:29:37 UTC; axter
 Author: Kleanthis Natsiopoulos [aut, cre]
     (<https://orcid.org/0000-0003-1180-2984>),
   Nickolaos Tzeremes [aut] (<https://orcid.org/0000-0002-6938-3404>)
 Maintainer: Kleanthis Natsiopoulos <klnatsio@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-05-16 12:36:06 UTC
+Date/Publication: 2023-08-21 08:02:41 UTC
